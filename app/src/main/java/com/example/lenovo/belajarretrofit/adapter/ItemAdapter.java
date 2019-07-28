@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.lenovo.belajarretrofit.AddAndUpdateActivity;
 import com.example.lenovo.belajarretrofit.R;
 import com.example.lenovo.belajarretrofit.model.Item;
 
@@ -71,24 +72,14 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
             @Override
             public void onClick(View view) {
                 Toast.makeText(context, "Name : " + listItem.get(position).getName(), Toast.LENGTH_LONG).show();
-//                Intent intent = new Intent(context, AddItemActivity.class);
-//                intent.putExtra("position",position);
-//                intent.putExtra("item",listItem.get(position));
-//                context.startActivity(intent);
-
-
-            }
-        });
-
-        holder.cvItem.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                return true;
+                Intent intent = new Intent(context, AddAndUpdateActivity.class);
+                intent.putExtra("position",position);
+                intent.putExtra("item",listItem.get(position));
+                context.startActivity(intent);
             }
         });
 
     }
-
 
     @Override
     public int getItemCount() {

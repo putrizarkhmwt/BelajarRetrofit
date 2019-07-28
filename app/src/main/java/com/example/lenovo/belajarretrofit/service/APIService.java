@@ -15,7 +15,6 @@ public interface APIService {
     @FormUrlEncoded
     Call<Result> create(
             @Path("token") String token,
-            @Path("id") int id,
             @Field("name") String name,
             @Field("brand") String brand,
             @Field("price") Integer price
@@ -30,6 +29,7 @@ public interface APIService {
             @Field("brand") String brand,
             @Field("price") Integer price
     );
+
 
     @GET("/{token}/item")
     Call<Result> getAll(
